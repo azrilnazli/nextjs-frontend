@@ -45,15 +45,17 @@ export default function RootLayout({ children }) {
         <footer className="p-3 bg-light">
           <div>
             <a href="https://coreui.io">Video Management System</a>
+            {' '}
             <span>&copy; 2023 StreamDotMySolutions</span>
           </div>
           <div>
             <span>Powered by</span>
+            {' '}
             <a href="https://coreui.io">NEXTJS - LARAVEL</a>
           </div>
         </footer>
 
-        
+
         </Container>
 
 
