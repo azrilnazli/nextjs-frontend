@@ -19,6 +19,6 @@ export default function Login() {
   
 
   return (
-  <>token is {token}</>
+  <>token is -{token}</>
   )
 }

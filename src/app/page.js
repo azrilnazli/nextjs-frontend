@@ -1,12 +1,12 @@
 
 const Home = async() => {
 
-  const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  const res = await fetch("http://laravel.local:8000/api/token"); 
   const data = await res.json();
-  console.log(data)
+  console.log(data) // output in terminal, not browser inspect
 
   return (
-  <>test 123</>
+  <>Token is {data.token}</>
   )
 }
 export default Home
