@@ -5,7 +5,7 @@ const Dashboard = async () => {
   await CheckToken(); // check token validity
 
   return (
-    <>dashboard</>
+    <>dashboard test</>
   );
 };
 
