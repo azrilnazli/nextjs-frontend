@@ -2,6 +2,7 @@ const Home = async () => {
   try {
     const res = await fetch("http://laravel.local:8081/api/token", {
       headers: {
+        cache: 'no-store', // no cache
         Accept: "application/json",
         // Add any other headers you may need here
       },
