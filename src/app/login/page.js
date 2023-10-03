@@ -39,8 +39,7 @@ const LoginPage = () => {
       // Handle the response data here (e.g., store tokens, display messages)
       console.log('Response:', responseData);
 
-      // Save the token to session storage
-      sessionStorage.setItem('authToken', responseData.token);
+      // Save the token to state management
       useUserStore.setState({ 
           loggedIn: true,
           token: responseData.token,

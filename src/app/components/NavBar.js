@@ -11,7 +11,7 @@ import { faSignOut } from "@fortawesome/free-solid-svg-icons";
 import { faSignIn } from "@fortawesome/free-solid-svg-icons";
 
 import useUserStore from '../libs/store';
-import { redirect,useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 
 function NavBar() {
