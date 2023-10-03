@@ -1,8 +1,12 @@
 'use client'
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { Form, Button, Card, CardFooter, CardBody, Alert } from 'react-bootstrap';
+import useUserStore from '../libs/store';
 
 const LoginPage = () => {
+  //const user = useUserStore() // get store
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
@@ -16,6 +20,7 @@ const LoginPage = () => {
     const requestBody = JSON.stringify({ email, password });
   
     try {
+      setError(null);
       const response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -33,6 +38,18 @@ const LoginPage = () => {
   
       // Handle the response data here (e.g., store tokens, display messages)
       console.log('Response:', responseData);
+
+      // Save the token to session storage
+      sessionStorage.setItem('authToken', responseData.token);
+      useUserStore.setState({ 
+          loggedIn: true,
+          token: responseData.token,
+          email: email
+         })
+
+      // redirect to /dashboard
+      router.push("/dashboard")
+
     } catch (error) {
       setError('Login failed. Please check your credentials.');
 
