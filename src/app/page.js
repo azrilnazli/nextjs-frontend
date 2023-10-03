@@ -1,12 +1,27 @@
+const Home = async () => {
+  try {
+    const res = await fetch("http://laravel.local:8081/api/token", {
+      headers: {
+        Accept: "application/json",
+        // Add any other headers you may need here
+      },
+    });
 
-const Home = async() => {
+    if (!res.ok) {
+      // Handle errors here if needed
+      throw new Error("Network response was not ok");
+    }
 
-  const res = await fetch("http://laravel.local:8000/api/token"); 
-  const data = await res.json();
-  console.log(data) // output in terminal, not browser inspect
+    const data = await res.json();
+    console.log(data); // Output in browser's console
 
-  return (
-  <>Token is {data.token}</>
-  )
-}
-export default Home
+    return (
+      <>Token is {data.token}</>
+    );
+  } catch (error) {
+    console.error(error);
+    return <div>Error: {error.message}</div>;
+  }
+};
+
+export default Home;
