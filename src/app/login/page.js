@@ -14,7 +14,9 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const url = 'http://laravel.local:8081/api/login';
+    //const url = 'http://laravel.local:8000/api/login';
+    const url = `${process.env.SERVER_URL}:${process.env.SERVER_PORT}/api/login`;
+
 
     // Create a request body with your login data
     const requestBody = JSON.stringify({ email, password });

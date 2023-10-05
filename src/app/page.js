@@ -1,6 +1,7 @@
 const Home = async () => {
   try {
-    const res = await fetch("http://laravel.local:8081/api/token", {
+    const url = `${process.env.SERVER_URL}:${process.env.SERVER_PORT}/api/token`;
+    const res = await fetch(url, {
       headers: {
         cache: 'no-store', // no cache
         Accept: "application/json",

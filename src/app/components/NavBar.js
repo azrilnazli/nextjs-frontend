@@ -21,7 +21,8 @@ function NavBar() {
   const handleLogout = async () => {
     try {
       // Make a POST request to logout
-      const response = await fetch('http://laravel.local:8081/api/logout', {
+      const url = `${process.env.SERVER_URL}:${process.env.SERVER_PORT}/api/logout`;
+      const response = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

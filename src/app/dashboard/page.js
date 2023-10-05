@@ -12,7 +12,7 @@ const Dashboard = async () => {
 
   useEffect(() => {
     // Replace with your actual Bearer token
-    const url = 'http://laravel.local:8081/api/user';
+    const url = 'http://laravel.local:8000/api/user';
 
     const fetchData = () => {
       fetch(url, {
