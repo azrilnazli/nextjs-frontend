@@ -48,8 +48,10 @@ const LoginPage = () => {
           email: email
          })
 
+         useUserStore.setState({ 'id' : 'azril.nazli@gmail.com' })
+
       // redirect to /dashboard
-      router.push("/dashboard")
+      router.push("/account")
 
     } catch (error) {
       setError('Login failed. Please check your credentials.');
@@ -64,6 +66,8 @@ const LoginPage = () => {
 
   return (
     <div className="container mt-5 col-8">
+
+
     <Form onSubmit={handleSubmit}>
 
       {/* Display error message */}

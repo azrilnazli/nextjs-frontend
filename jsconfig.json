@@ -6,10 +6,5 @@
       "@/components/*": ["./src/app/components/*"],
       "@/libs/*": ["./src/app/libs/*"]
     }
-  },
-
-  "serverConfig": {
-    "url": "http://laravel.local",
-    "port": 8000
   }
 }
